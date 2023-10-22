@@ -1,5 +1,8 @@
 <template>
-  <Tutorial />
+  <div>
+    <NuxtLink to="/experience">Experience</NuxtLink>
+    <p>Hello!</p>
+  </div>
 </template>
 
 <script>
