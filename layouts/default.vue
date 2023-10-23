@@ -4,9 +4,11 @@
   </div>
 </template>
 
-<style>
-div {
-  color: red;
-  background-color: blue;
+<style scoped>
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 </style>
