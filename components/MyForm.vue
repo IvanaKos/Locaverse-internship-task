@@ -4,6 +4,7 @@
       <div class="input-unit">
         <input
           id="service-name"
+          v-model="serviceName"
           placeholder="Service-name"
           type="text"
           class="input-contact-info"
@@ -15,8 +16,9 @@
       <div class="input-unit">
         <input
           id="business-name"
+          v-model="businessName"
           placeholder="Business-name"
-          type="email"
+          type="text"
           class="input-contact-info"
           autocomplete="email"
           required
@@ -26,8 +28,9 @@
       <div class="input-unit">
         <input
           id="rating"
+          v-model="ratingValue"
           placeholder="Service-rating"
-          type="email"
+          type="text"
           class="input-contact-info"
           autocomplete="email"
           required
@@ -37,8 +40,31 @@
 
       <input type="submit" value="Submit" class="submit-btn" />
     </form>
+    <ServiceCard
+      :service="serviceName"
+      :business="businessName"
+      :rating="ratingValue"
+    />
   </div>
 </template>
+
+<script>
+import ServiceCard from '~/components/ServiceCard.vue'
+
+export default {
+  components: {
+    ServiceCard,
+  },
+
+  data() {
+    return {
+      serviceName: '',
+      businessName: '',
+      ratingValue: '',
+    }
+  },
+}
+</script>
 
 <style>
 .form-container {

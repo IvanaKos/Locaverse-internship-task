@@ -5,13 +5,32 @@
         <img src="../assets/img/locaverse-logo.jpg" alt="" />
       </div>
       <div class="service-info">
-        <p class="service-name">This is service name</p>
-        <p class="business-name">This is business name</p>
-        <p class="rating">Rate me</p>
+        <p class="service-name">{{ service || 'No service name' }}</p>
+        <p class="business-name">{{ business || 'No business name' }}</p>
+        <p class="rating">{{ rating || 'No rating' }}</p>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    service: {
+      type: String,
+      default: 'Service name',
+    },
+    business: {
+      type: String,
+      default: 'Business name',
+    },
+    rating: {
+      type: String,
+      default: 'Rating',
+    },
+  },
+}
+</script>
 
 <style>
 .service-card-wraper {
