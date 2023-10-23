@@ -1,6 +1,6 @@
 <template>
   <div class="form-container">
-    <form id="form" class="rating-form">
+    <form id="form" class="rating-form" @submit.prevent="submitForm">
       <div class="input-unit">
         <input
           id="service-name"
@@ -41,9 +41,9 @@
       <input type="submit" value="Submit" class="submit-btn" />
     </form>
     <ServiceCard
-      :service="serviceName"
-      :business="businessName"
-      :rating="ratingValue"
+      :service="submittedServiceName"
+      :business="submittedBusinessName"
+      :rating="submittedRatingValue"
     />
   </div>
 </template>
@@ -61,7 +61,18 @@ export default {
       serviceName: '',
       businessName: '',
       ratingValue: '',
+      submittedServiceName: '',
+      submittedBusinessName: '',
+      submittedRatingValue: '',
     }
+  },
+
+  methods: {
+    submitForm() {
+      this.submittedServiceName = this.serviceName
+      this.submittedBusinessName = this.businessName
+      this.submittedRatingValue = this.ratingValue
+    },
   },
 }
 </script>
