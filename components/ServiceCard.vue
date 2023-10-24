@@ -7,6 +7,7 @@
       <div class="service-info">
         <p class="service-name">{{ service || 'No service name' }}</p>
         <p class="business-name">{{ business || 'No business name' }}</p>
+        <RatingResult :rating="rating" />
       </div>
     </div>
   </div>
@@ -24,8 +25,8 @@ export default {
       default: 'Business name',
     },
     rating: {
-      type: String,
-      default: 'Rating',
+      type: Number,
+      default: 0,
     },
   },
 }

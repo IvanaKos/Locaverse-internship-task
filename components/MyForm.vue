@@ -32,7 +32,7 @@
     <ServiceCard
       :service="submittedServiceName"
       :business="submittedBusinessName"
-      :rating-stars="submittedRatingValue"
+      :rating="submittedRatingStars"
     />
   </div>
 </template>
@@ -49,18 +49,28 @@ export default {
     return {
       serviceName: '',
       businessName: '',
-      ratingValue: '',
       submittedServiceName: '',
       submittedBusinessName: '',
-      submittedRatingValue: '',
+      submittedRatingStars: 0,
     }
+  },
+
+  computed: {
+    ratingStars: {
+      get() {
+        return this.submittedRatingStars
+      },
+      set(value) {
+        this.submittedRatingStars = value
+      },
+    },
   },
 
   methods: {
     submitForm() {
       this.submittedServiceName = this.serviceName
       this.submittedBusinessName = this.businessName
-      this.submittedRatingValue = this.ratingValue
+      this.submittedRatingStars = this.ratingStars
     },
   },
 }

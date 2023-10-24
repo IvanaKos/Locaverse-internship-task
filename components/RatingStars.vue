@@ -19,6 +19,12 @@
 
 <script>
 export default {
+  props: {
+    value: {
+      type: Number,
+      default: 0,
+    },
+  },
   data() {
     return {
       rating: 0,
@@ -27,6 +33,7 @@ export default {
   methods: {
     setRating(star) {
       this.rating = star
+      this.$emit('input', star)
     },
   },
 }
