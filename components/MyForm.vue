@@ -1,5 +1,6 @@
 <template>
   <div class="form-container">
+    <h1>Please Rate Our Service!</h1>
     <form id="form" class="rating-form" @submit.prevent="submitForm">
       <div class="input-unit">
         <input
@@ -30,6 +31,7 @@
       <input type="submit" value="Submit" class="submit-btn" />
     </form>
     <ServiceCard
+      v-if="formSubmitted"
       :service="submittedServiceName"
       :business="submittedBusinessName"
       :rating="submittedRatingStars"
@@ -52,6 +54,7 @@ export default {
       submittedServiceName: '',
       submittedBusinessName: '',
       submittedRatingStars: 0,
+      formSubmitted: false,
     }
   },
 
@@ -71,6 +74,7 @@ export default {
       this.submittedServiceName = this.serviceName
       this.submittedBusinessName = this.businessName
       this.submittedRatingStars = this.ratingStars
+      this.formSubmitted = true
     },
   },
 }
@@ -79,7 +83,11 @@ export default {
 <style>
 .form-container {
   width: 40%;
-  margin-top: 100px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 50px;
 }
 
 .rating-form {

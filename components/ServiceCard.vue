@@ -35,10 +35,8 @@ export default {
 <style>
 .service-card-wraper {
   display: flex;
-  flex-direction: column;
-  padding: 0.5rem;
-  row-gap: 0.5rem;
-  margin: 80px;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .service-card {
@@ -70,6 +68,7 @@ export default {
   padding: 10px;
   border: 1px solid hsl(206deg 14% 68%);
   border-radius: 0 0 5px 5px;
+  text-align: left;
   overflow: hidden;
 }
 
