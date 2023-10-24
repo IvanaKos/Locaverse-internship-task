@@ -25,25 +25,14 @@
         />
         <p></p>
       </div>
-      <div class="input-unit">
-        <input
-          id="rating"
-          v-model="ratingValue"
-          placeholder="Service-rating"
-          type="text"
-          class="input-contact-info"
-          autocomplete="email"
-          required
-        />
-        <p></p>
-      </div>
+      <RatingStars v-model="ratingStars" />
 
       <input type="submit" value="Submit" class="submit-btn" />
     </form>
     <ServiceCard
       :service="submittedServiceName"
       :business="submittedBusinessName"
-      :rating="submittedRatingValue"
+      :rating-stars="submittedRatingValue"
     />
   </div>
 </template>

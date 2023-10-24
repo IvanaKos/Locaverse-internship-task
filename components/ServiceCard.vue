@@ -7,7 +7,6 @@
       <div class="service-info">
         <p class="service-name">{{ service || 'No service name' }}</p>
         <p class="business-name">{{ business || 'No business name' }}</p>
-        <p class="rating">{{ rating || 'No rating' }}</p>
       </div>
     </div>
   </div>
