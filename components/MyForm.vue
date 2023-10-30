@@ -1,80 +1,67 @@
 <template>
   <div class="form-container">
     <h1>Please Rate Our Service!</h1>
-    <form id="form" class="rating-form" @submit.prevent="submitForm">
+    <form id="form" class="rating-form" @submit.prevent="emitCardValues">
       <div class="input-unit">
         <input
           id="service-name"
-          v-model="serviceName"
           placeholder="Service-name"
           type="text"
           class="input-contact-info"
           autocomplete="name"
           required
+          :value="serviceName"
+          @input="updateServiceName"
         />
-        <p></p>
       </div>
       <div class="input-unit">
         <input
           id="business-name"
-          v-model="businessName"
           placeholder="Business-name"
           type="text"
           class="input-contact-info"
           autocomplete="email"
           required
+          :value="businessName"
+          @input="updateBusinessName"
         />
-        <p></p>
       </div>
-      <RatingStars v-model="ratingStars" />
+      <RatingStars />
 
       <input type="submit" value="Submit" class="submit-btn" />
     </form>
-    <ServiceCard
-      v-if="formSubmitted"
-      :service="submittedServiceName"
-      :business="submittedBusinessName"
-      :rating="submittedRatingStars"
-    />
   </div>
 </template>
 
 <script>
-import ServiceCard from '~/components/ServiceCard.vue'
+import RatingStars from '~/components/RatingStars.vue'
 
 export default {
   components: {
-    ServiceCard,
+    RatingStars,
   },
 
   data() {
     return {
       serviceName: '',
       businessName: '',
-      submittedServiceName: '',
-      submittedBusinessName: '',
-      submittedRatingStars: 0,
-      formSubmitted: false,
+
+      // formSubmitted: false,
     }
   },
 
-  computed: {
-    ratingStars: {
-      get() {
-        return this.submittedRatingStars
-      },
-      set(value) {
-        this.submittedRatingStars = value
-      },
-    },
-  },
-
   methods: {
-    submitForm() {
-      this.submittedServiceName = this.serviceName
-      this.submittedBusinessName = this.businessName
-      this.submittedRatingStars = this.ratingStars
-      this.formSubmitted = true
+    updateServiceName(event) {
+      this.serviceName = event.target.value
+    },
+    updateBusinessName(event) {
+      this.businessName = event.target.value
+    },
+    emitCardValues() {
+      this.$emit('card-values-updated', {
+        serviceName: this.serviceName,
+        businessName: this.businessName,
+      })
     },
   },
 }
@@ -82,7 +69,6 @@ export default {
 
 <style>
 .form-container {
-  width: 40%;
   text-align: center;
 }
 
@@ -94,6 +80,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 .input-unit {

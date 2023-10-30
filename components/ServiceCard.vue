@@ -7,28 +7,34 @@
       <div class="service-info">
         <p class="service-name">{{ service || 'No service name' }}</p>
         <p class="business-name">{{ business || 'No business name' }}</p>
-        <RatingResult :rating="rating" />
+        <!-- <RatingResult :rating="rating" /> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+// import RatingResult from '~/components/RatingResult.vue'
+
 export default {
+  components: {
+    // RatingResult,
+  },
   props: {
     service: {
-      type: String,
-      default: 'Service name',
+      type: String, // Use the String constructor for a string prop
+      default: 'No service',
     },
     business: {
-      type: String,
-      default: 'Business name',
-    },
-    rating: {
-      type: Number,
-      default: 0,
+      type: String, // Use the String constructor for a string prop
+      default: 'No business',
     },
   },
+
+  // rating: {
+  //   type: Number,
+  //   default: 0,
+  // },
 }
 </script>
 

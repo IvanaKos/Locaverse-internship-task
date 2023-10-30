@@ -10,6 +10,7 @@
         />
       </template>
     </div>
+    <!-- <RatingStars /> -->
   </div>
 </template>
 

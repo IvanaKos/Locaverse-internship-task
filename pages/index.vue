@@ -1,19 +1,19 @@
 <template>
   <div class="page">
     <MainHeader />
-    <MyForm />
+    <MyApp />
   </div>
 </template>
 
 <script>
-import MyForm from '~/components/MyForm.vue'
+import MyApp from '~/components/MyApp.vue'
 import MainHeader from '~/components/MainHeader.vue'
 
 export default {
   name: 'IndexPage',
   components: {
     MainHeader,
-    MyForm,
+    MyApp,
   },
 }
 </script>
