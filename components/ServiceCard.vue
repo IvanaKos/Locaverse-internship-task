@@ -40,6 +40,7 @@ export default {
 <style>
 .service-card-wraper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: 40px;
 }

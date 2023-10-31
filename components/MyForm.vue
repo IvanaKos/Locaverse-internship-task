@@ -76,6 +76,7 @@ export default {
 
 <style>
 .form-container {
+  width: 50%;
   text-align: center;
 }
 
@@ -112,7 +113,7 @@ input:focus {
 
 .submit-btn {
   width: 200px;
-  margin-top: 50px;
+  margin-top: 20px;
   color: hsl(0deg 0% 100%);
   background-color: hsl(195deg 63% 48%);
   transition: 0.4s;

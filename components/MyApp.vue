@@ -1,13 +1,15 @@
 <template>
   <div class="my-app">
     <MyForm @card-values-updated="updateCardValues"></MyForm>
-    <ServiceCard
-      v-for="cardItem in cardItems"
-      :key="cardItem.businessName"
-      :service="cardItem.serviceName"
-      :business="cardItem.businessName"
-      :rating-value="cardItem.rating"
-    />
+    <div class="card-container">
+      <ServiceCard
+        v-for="cardItem in cardItems"
+        :key="cardItem.businessName"
+        :service="cardItem.serviceName"
+        :business="cardItem.businessName"
+        :rating-value="cardItem.rating"
+      />
+    </div>
   </div>
 </template>
 
@@ -40,9 +42,21 @@ export default {
 </script>
 
 <style>
-.myapp {
+.my-app {
+  width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.card-container {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
 }
 </style>
