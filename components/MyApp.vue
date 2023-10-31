@@ -1,7 +1,13 @@
 <template>
   <div class="my-app">
     <MyForm @card-values-updated="updateCardValues"></MyForm>
-    <ServiceCard :service="serviceName" :business="businessName" />
+    <ServiceCard
+      v-for="cardItem in cardItems"
+      :key="cardItem.businessName"
+      :service="cardItem.serviceName"
+      :business="cardItem.businessName"
+      :rating-value="cardItem.rating"
+    />
   </div>
 </template>
 
@@ -17,18 +23,17 @@ export default {
 
   data() {
     return {
-      serviceName: '',
-      businessName: '',
+      cardItems: [],
     }
   },
 
   methods: {
-    // handleCardUpdate(value) {
-    //   this.receivedValue.service = value
-    // },
     updateCardValues(data) {
-      this.serviceName = data.serviceName
-      this.businessName = data.businessName
+      this.cardItems.push({
+        serviceName: data.serviceName,
+        businessName: data.businessName,
+        rating: data.rating,
+      })
     },
   },
 }

@@ -26,7 +26,7 @@
           @input="updateBusinessName"
         />
       </div>
-      <RatingStars />
+      <RatingStars ref="ratingStars" @rating-updated="updateRating" />
 
       <input type="submit" value="Submit" class="submit-btn" />
     </form>
@@ -45,8 +45,7 @@ export default {
     return {
       serviceName: '',
       businessName: '',
-
-      // formSubmitted: false,
+      rating: 0,
     }
   },
 
@@ -57,11 +56,19 @@ export default {
     updateBusinessName(event) {
       this.businessName = event.target.value
     },
+    updateRating(rating) {
+      this.rating = rating
+    },
     emitCardValues() {
       this.$emit('card-values-updated', {
         serviceName: this.serviceName,
         businessName: this.businessName,
+        rating: this.rating,
       })
+      this.serviceName = ''
+      this.businessName = ''
+      this.rating = 0
+      this.$refs.ratingStars.resetRating()
     },
   },
 }

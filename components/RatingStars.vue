@@ -24,10 +24,14 @@ export default {
       rating: 0,
     }
   },
+
   methods: {
     setRating(star) {
       this.rating = star
-      this.$emit('input', star)
+      this.$emit('rating-updated', star)
+    },
+    resetRating() {
+      this.rating = 0
     },
   },
 }
