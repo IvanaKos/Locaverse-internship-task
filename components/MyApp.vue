@@ -3,7 +3,7 @@
     <MyForm @card-values-updated="updateCardValues"></MyForm>
     <div class="card-container">
       <ServiceCard
-        v-for="cardItem in cardItems"
+        v-for="cardItem in $store.state.cardItems"
         :key="cardItem.businessName"
         :service="cardItem.serviceName"
         :business="cardItem.businessName"
@@ -31,7 +31,7 @@ export default {
 
   methods: {
     updateCardValues(data) {
-      this.cardItems.push({
+      this.$store.commit('updateCardItems', {
         serviceName: data.serviceName,
         businessName: data.businessName,
         rating: data.rating,
