@@ -23,4 +23,12 @@ nav {
   padding: 0 20px;
   color: hsl(195deg 63% 48%);
 }
+
+.active-link {
+  text-decoration: underline;
+}
+
+a.nuxt-link-exact-active {
+  font-weight: bold;
+}
 </style>
