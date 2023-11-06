@@ -2,18 +2,18 @@
   <div class="page">
     <MainHeader />
     <div class="description">
-      <h2>"All Beginnings are Difficult" :)</h2>
+      <h2>Experience and Challenges</h2>
       <p>
-        The task was interesting and challenging for me since I have never
-        worked with Vue or Nuxt before. The most difficult part was setting up
-        the Nuxt project. This part took a lot of time. After trillions of error
-        messages and rethinking a web developer career, it finally worked. But
-        not for long. Another round of error messages, linting problems,
-        Prettier failing... Then I couldn't commit because I had to set VS Code
-        workspace to create new files in the LF line endings (this was not
-        obvious and easy for me). Almost there, but then lost more than half an
-        hour because I didn't know I should stop the process and run it again,
-        after I created a new file. :)
+        The task was interesting and challenging since I have never worked with
+        Vue or Nuxt before. The most difficult part was setting up the Nuxt
+        project. This part took a lot of time. After many error messages and
+        rethinking a web developer career, it finally worked. But not for long.
+        Another round of error messages, linting problems, Prettier failing...
+        Then I couldn't commit because I had to set VS Code workspace to create
+        new files in the LF line endings (this was not obvious and took me some
+        time again). Almost there, but then lost more than half an hour because
+        I didn't know I should stop the process and run it again, after I
+        created a new file. :)
       </p>
       <p>
         Finally, I managed to actually start working on the project. This was
